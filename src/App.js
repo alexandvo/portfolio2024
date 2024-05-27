@@ -1,11 +1,10 @@
 import "./tailwind.css";
-
+import Home from "./screens/Home";
+import "./styles/global.css";
 
 function App() {
   return (
-    <div>
-      nothing here yet
-    </div>
+    <Home/>
   );
 }
 
