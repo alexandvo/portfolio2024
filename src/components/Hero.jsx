@@ -13,6 +13,7 @@ const Hero = () => {
         alignItems: "center",
         flexDirection: "column",
         position: "relative",
+        mb: 5,
       }}
     >
       <img

@@ -2,8 +2,14 @@ import "./tailwind.css";
 import Home from "./screens/Home";
 import "./styles/global.css";
 import { ThemeProvider, createTheme } from "@mui/material";
+import { useEffect, useState } from "react";
 
 const theme = createTheme({
+  // breakpoints: {
+  //   values: {
+  //     sm: ,
+  //   }
+  // },
   palette: {
     primary: {
       main: "#ffffff",
