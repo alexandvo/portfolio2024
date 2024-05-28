@@ -1,9 +1,9 @@
-import {Container } from "@mui/material";
+import {Box, Container } from "@mui/material";
 import Hero from "../components/Hero";
 
 const Home = () => {
   return (
-    <Container>
+    <Container >
         <Hero/>
     </Container>
   );
