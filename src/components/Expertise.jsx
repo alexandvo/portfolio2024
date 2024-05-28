@@ -6,6 +6,7 @@ import {
   CardHeader,
   Container,
   Typography,
+  useMediaQuery,
   useTheme,
 } from "@mui/material";
 import computerIcon from "../assets/images/computer.png";
@@ -16,15 +17,18 @@ import ExpertiseCard from "./ExpertiseCard";
 
 const Expertise = () => {
   const theme = useTheme();
+
+  const { isSmallScreen, isMediumScreen, isLargeScreen } = theme.ss;
+
+  const variant = isSmallScreen ? "h4" : isMediumScreen ? "h2" : "h2";
+
   return (
-    <Box sx={{ mt: 5, mb: 5 }}>
+    <Box sx={{mb: 10 }}>
       <Typography
-        variant="h2"
+        variant={variant}
         align="center"
-        fontWeight="bold"
-        fontFamily={theme.typography.primary}
-        color="primary"
-        sx={{ mb: 6 }}
+        sx={{ mb: 6 ,
+        }}
       >
         My Expertise
       </Typography>
