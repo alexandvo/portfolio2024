@@ -1,6 +1,7 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import abstract from "../assets/images/abstract-shape.png";
 import downArrow from "../assets/images/down-arrow.png"
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const Hero = () => {
   const theme = useTheme();
@@ -47,12 +48,12 @@ const Hero = () => {
           flexDirection: 'column',
           width: "100px",
           bottom: 0,
-          mb: 10,
+          mb: 6,
           
         }}
       >
-        <Typography sx={{mb: 1}} color='primary' variant="body1" fontFamily={theme.typography.secondary}>Learn More</Typography>
-        <img src={downArrow} alt="down arrow" style={{width: '30px', animation: 'oscillate 1s ease-in-out infinite'}}/>
+        <Typography color='primary' variant="body1" fontFamily={theme.typography.secondary}>Learn More</Typography>
+        <ExpandMoreIcon color="primary" sx={{fontSize: '2rem'}} className="oscillate-animation"/>
       </Box>
     </Box>
   );

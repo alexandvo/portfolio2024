@@ -6,7 +6,7 @@ import Skills from "../components/Skills";
 const Home = () => {
   const open = false;
   return (
-    <Container sx={{ position: "relative" }}>
+    <Container>
       <Hero />
       <Expertise />
       <Skills />
