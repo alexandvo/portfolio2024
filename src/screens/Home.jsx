@@ -2,6 +2,7 @@ import { Box, Collapse, Container, Typography } from "@mui/material";
 import Hero from "../components/Hero";
 import Expertise from "../components/Expertise";
 import Skills from "../components/Skills";
+import Work from "../components/Work";
 
 const Home = () => {
   const open = false;
@@ -10,6 +11,7 @@ const Home = () => {
       <Hero />
       <Expertise />
       <Skills />
+      <Work />
     </Container>
   );
 };

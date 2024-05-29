@@ -1,6 +1,7 @@
 import {
   Box,
   Collapse,
+  Hidden,
   Paper,
   Typography,
   useMediaQuery,
@@ -26,33 +27,188 @@ const Skills = () => {
   const variant = isSmallScreen ? "h4" : isMediumScreen ? "h2" : "h2";
   const skillsRef = useRef(null);
   const skills = [
-      ["Firebase", "#FFA611", "white", new Set(["Backend", "Databases", "All"]), "https://firebase.google.com"],
-      ["Python", "#3776AB", "white", new Set(["Languages", "All"]), "https://www.python.org"],
-      ["C", "#A8B9CC", "white", new Set(["Languages", "All"]), "https://www.w3schools.com/c/c_intro.php"],
-      ["C++", "#6495ED", "white", new Set(["Languages", "All"]), "https://cplusplus.com/"],
-      ["Java", "#007396", "white", new Set(["Languages", "All"]), "https://www.java.com"],
-      ["JavaScript", "#F0DB4F", "black", new Set(["Languages", "All"]), "https://developer.mozilla.org/en-US/docs/Web/JavaScript"],
-      ["HTML", "#E34F26", "white", new Set(["Frontend", "All"]), "https://developer.mozilla.org/en-US/docs/Web/HTML"],
-      ["CSS", "#1572B6", "white", new Set(["Frontend", "All"]), "https://developer.mozilla.org/en-US/docs/Web/CSS"],
-      ["Racket", "#8B0000", "white", new Set(["Languages", "All"]), "https://racket-lang.org/"],
-      ["PostgreSQL", "#336791", "white", new Set(["Databases", "All"]), "https://www.postgresql.org/"],
-      ["AWS", "#FF9900", "white", new Set(["Databases", "Backend", "All"]), "https://aws.amazon.com/"],
-      ["React", "#61DAFB", "white", new Set(["Frontend", "All"]), "https://reactjs.org/"],
-      ["React Native", "#61DAFB", "white", new Set(["Frontend", "All"]), "https://reactnative.dev/"],
-      ["JavaFX", "#B22222", "white", new Set(["Frontend", "All"]), "https://openjfx.io/"],
-      ["Node.js", "#68A063", "white", new Set(["Backend", "All"]), "https://nodejs.org/"],
-      ["Express", "#000000", "white", new Set(["Backend", "All"]), "https://expressjs.com/"],
-      ["Supabase", "#40514E", "white", new Set(["Databases", "Backend", "All"]), "https://supabase.io/"],
-      ["Vercel", "#000000", "white", new Set(["Tools", "All"]), "https://vercel.com/"],
-      ["Render.com", "#348F50", "white", new Set(["Tools", "All"]), "https://render.com/"],
-      ["Git", "#F05032", "white", new Set(["Tools", "All"]), "https://git-scm.com/"],
-      ["GitHub", "#181717", "white", new Set(["Tools", "All"]), "https://github.com/"],
-      ["Yarn", "#2C8EBB", "white", new Set(["Tools", "All"]), "https://yarnpkg.com/"],
-      ["NPM", "#CB3837", "white", new Set(["Tools", "All"]), "https://www.npmjs.com/"],
-      ["Figma", "#9400D3", "white", new Set(["Tools", "All"]), "https://www.figma.com/"],
-      ["OpenAI", "#00AFF0", "white", new Set(["Tools", "All"]), "https://openai.com/"],
-      ["Microsoft Office", "#D83B01", "white", new Set(["Tools", "All"]), "https://www.microsoft.com/en-us/microsoft-365/get-started-with-office-2019"],
-    
+    [
+      "Firebase",
+      "#FFA611",
+      "white",
+      new Set(["Backend", "Databases", "All"]),
+      "https://firebase.google.com",
+    ],
+    [
+      "Python",
+      "#3776AB",
+      "white",
+      new Set(["Languages", "All"]),
+      "https://www.python.org",
+    ],
+    [
+      "C",
+      "#A8B9CC",
+      "white",
+      new Set(["Languages", "All"]),
+      "https://www.w3schools.com/c/c_intro.php",
+    ],
+    [
+      "C++",
+      "#6495ED",
+      "white",
+      new Set(["Languages", "All"]),
+      "https://cplusplus.com/",
+    ],
+    [
+      "Java",
+      "#007396",
+      "white",
+      new Set(["Languages", "All"]),
+      "https://www.java.com",
+    ],
+    [
+      "JavaScript",
+      "#F0DB4F",
+      "black",
+      new Set(["Languages", "All"]),
+      "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    ],
+    [
+      "HTML",
+      "#E34F26",
+      "white",
+      new Set(["Frontend", "All"]),
+      "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    ],
+    [
+      "CSS",
+      "#1572B6",
+      "white",
+      new Set(["Frontend", "All"]),
+      "https://developer.mozilla.org/en-US/docs/Web/CSS",
+    ],
+    [
+      "Racket",
+      "#8B0000",
+      "white",
+      new Set(["Languages", "All"]),
+      "https://racket-lang.org/",
+    ],
+    [
+      "PostgreSQL",
+      "#336791",
+      "white",
+      new Set(["Databases", "All"]),
+      "https://www.postgresql.org/",
+    ],
+    [
+      "AWS",
+      "#FF9900",
+      "white",
+      new Set(["Databases", "Backend", "All"]),
+      "https://aws.amazon.com/",
+    ],
+    [
+      "React",
+      "#61DAFB",
+      "white",
+      new Set(["Frontend", "All"]),
+      "https://reactjs.org/",
+    ],
+    [
+      "React Native",
+      "#61DAFB",
+      "white",
+      new Set(["Frontend", "All"]),
+      "https://reactnative.dev/",
+    ],
+    [
+      "JavaFX",
+      "#B22222",
+      "white",
+      new Set(["Frontend", "All"]),
+      "https://openjfx.io/",
+    ],
+    [
+      "Node.js",
+      "#68A063",
+      "white",
+      new Set(["Backend", "All"]),
+      "https://nodejs.org/",
+    ],
+    [
+      "Express",
+      "#000000",
+      "white",
+      new Set(["Backend", "All"]),
+      "https://expressjs.com/",
+    ],
+    [
+      "Supabase",
+      "#40514E",
+      "white",
+      new Set(["Databases", "Backend", "All"]),
+      "https://supabase.io/",
+    ],
+    [
+      "Vercel",
+      "#000000",
+      "white",
+      new Set(["Tools", "All"]),
+      "https://vercel.com/",
+    ],
+    [
+      "Render.com",
+      "#348F50",
+      "white",
+      new Set(["Tools", "All"]),
+      "https://render.com/",
+    ],
+    [
+      "Git",
+      "#F05032",
+      "white",
+      new Set(["Tools", "All"]),
+      "https://git-scm.com/",
+    ],
+    [
+      "GitHub",
+      "#181717",
+      "white",
+      new Set(["Tools", "All"]),
+      "https://github.com/",
+    ],
+    [
+      "Yarn",
+      "#2C8EBB",
+      "white",
+      new Set(["Tools", "All"]),
+      "https://yarnpkg.com/",
+    ],
+    [
+      "NPM",
+      "#CB3837",
+      "white",
+      new Set(["Tools", "All"]),
+      "https://www.npmjs.com/",
+    ],
+    [
+      "Figma",
+      "#9400D3",
+      "white",
+      new Set(["Tools", "All"]),
+      "https://www.figma.com/",
+    ],
+    [
+      "OpenAI",
+      "#00AFF0",
+      "white",
+      new Set(["Tools", "All"]),
+      "https://openai.com/",
+    ],
+    [
+      "Microsoft Office",
+      "#D83B01",
+      "white",
+      new Set(["Tools", "All"]),
+      "https://www.microsoft.com/en-us/microsoft-365/get-started-with-office-2019",
+    ],
   ];
 
   const [shownSkills, setShownSkills] = useState([...skills]);
@@ -83,103 +239,129 @@ const Skills = () => {
   };
 
   return (
-    <Box sx={{ mb: 10 }}>
+    <Box sx={{ mb: 8 }}>
       <Typography variant={variant} sx={{ mb: 6 }}>
         Skills
       </Typography>
-      <div>
-        <Button
-          sx={{
-            textTransform: "none",
-            bgcolor: "#2e2e2e",
-            mb: 2,
-            display: "flex",
-          }}
-          aria-controls="simple-menu"
-          aria-haspopup="true"
-          onClick={handleClick}
-          variant="contained"
-          endIcon={<ArrowDropDownIcon color="primary" />}
+
+      <Button
+        sx={{
+          textTransform: "none",
+          bgcolor: "#2e2e2e",
+          zIndex: 2000,
+          mb: 2,
+          "@media (hover: none) and (pointer: coarse)": {
+            "&:hover": {
+              backgroundColor: "#2e2e2e", // Reset hover color for touch devices
+            },
+          },
+        }}
+        aria-controls="simple-menu"
+        aria-haspopup="true"
+        onClick={handleClick}
+        variant="contained"
+        endIcon={<ArrowDropDownIcon color="primary" />}
+      >
+        <Typography
+          variant="h5"
+          fontFamily={theme.typography.secondary}
+          color="primary"
         >
+          {menuSelect}
+        </Typography>
+        {/* <img src={downArrow} alt="down arrow" /> */}
+      </Button>
+      <Menu
+        id="simple-menu"
+        anchorEl={anchorEl}
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+        sx={{
+          "& .MuiPaper-root": {
+            backgroundColor: "#2e2e2e", // Change this to your desired color
+          },
+          transform: "translateY(10px)",
+          zIndex: 3000,
+        }}
+      >
+        <MenuItem onClick={handleMenuItemClick("All")}>
           <Typography
             variant="h5"
             fontFamily={theme.typography.secondary}
             color="primary"
           >
-            {menuSelect}
+            All
           </Typography>
-          {/* <img src={downArrow} alt="down arrow" /> */}
-        </Button>
-        <Menu
-          id="simple-menu"
-          anchorEl={anchorEl}
-          open={Boolean(anchorEl)}
-          onClose={handleClose}
-          sx={{
-            "& .MuiPaper-root": {
-              backgroundColor: "#2e2e2e", // Change this to your desired color
-            },
-            transform: 'translateY(10px)'
-          }}
-        >
-          <MenuItem onClick={handleMenuItemClick("All")}>
-            <Typography
-              variant="h5"
-              fontFamily={theme.typography.secondary}
-              color="primary"
+        </MenuItem>
+        <MenuItem onClick={handleMenuItemClick("Frontend")}>
+          <Typography
+            variant="h5"
+            fontFamily={theme.typography.secondary}
+            color="primary"
+          >
+            Frontend
+          </Typography>
+        </MenuItem>
+        <MenuItem onClick={handleMenuItemClick("Backend")}>
+          <Typography
+            variant="h5"
+            fontFamily={theme.typography.secondary}
+            color="primary"
+          >
+            Backend
+          </Typography>
+        </MenuItem>
+        <MenuItem onClick={handleMenuItemClick("Databases")}>
+          <Typography
+            variant="h5"
+            fontFamily={theme.typography.secondary}
+            color="primary"
+          >
+            Databases
+          </Typography>
+        </MenuItem>
+        <MenuItem onClick={handleMenuItemClick("Tools")}>
+          <Typography
+            variant="h5"
+            fontFamily={theme.typography.secondary}
+            color="primary"
+          >
+            Tools
+          </Typography>
+        </MenuItem>
+        <MenuItem onClick={handleMenuItemClick("Languages")}>
+          <Typography
+            variant="h5"
+            fontFamily={theme.typography.secondary}
+            color="primary"
+          >
+            Languages
+          </Typography>
+        </MenuItem>
+      </Menu>
+
+      <Box sx={{ position: "relative", pb: menuSelect != "All" ? 0 : 12}}>
+        {menuSelect == "All" ? (
+          <Collapse
+            in={showAll || !collapsable || menuSelect != "All"}
+            collapsedSize={200}
+          >
+            <Box
+              ref={skillsRef}
+              sx={{ display: "flex", flexWrap: "wrap", gap: 2 }}
             >
-              All
-            </Typography>
-          </MenuItem>
-          <MenuItem onClick={handleMenuItemClick("Frontend")}>
-            <Typography
-              variant="h5"
-              fontFamily={theme.typography.secondary}
-              color="primary"
-            >
-              Frontend
-            </Typography>
-          </MenuItem>
-          <MenuItem onClick={handleMenuItemClick("Backend")}>
-            <Typography
-              variant="h5"
-              fontFamily={theme.typography.secondary}
-              color="primary"
-            >
-              Backend
-            </Typography>
-          </MenuItem>
-          <MenuItem onClick={handleMenuItemClick("Databases")}>
-            <Typography
-              variant="h5"
-              fontFamily={theme.typography.secondary}
-              color="primary"
-            >
-              Databases
-            </Typography>
-          </MenuItem>
-          <MenuItem onClick={handleMenuItemClick("Tools")}>
-            <Typography
-              variant="h5"
-              fontFamily={theme.typography.secondary}
-              color="primary"
-            >
-              Tools
-            </Typography>
-          </MenuItem>
-          <MenuItem onClick={handleMenuItemClick("Languages")}>
-            <Typography
-              variant="h5"
-              fontFamily={theme.typography.secondary}
-              color="primary"
-            >
-              Languages
-            </Typography>
-          </MenuItem>
-        </Menu>
-      </div>
-      <Box sx={{ position: "relative" }}>
-        <Collapse in={showAll || !collapsable || menuSelect != "All"} collapsedSize={200}>
+              {shownSkills.map((skill, _) => (
+                <SkillCard
+                  key={_}
+                  name={skill[0]}
+                  bgColor={skill[1]}
+                  fontColor={skill[2]}
+                  url={skill[4]}
+                />
+              ))}
+            </Box>
+          </Collapse>
+        ) : (
           <Box
             ref={skillsRef}
             sx={{ display: "flex", flexWrap: "wrap", gap: 2 }}
@@ -194,11 +376,12 @@ const Skills = () => {
               />
             ))}
           </Box>
-        </Collapse>
+        )}
+
         <Box
           sx={{
             position: "absolute",
-            bottom: 0,
+            bottom: 96,
             left: 0,
             right: 0,
             height: "50px",
@@ -216,8 +399,10 @@ const Skills = () => {
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
-              bottom: showAll ? -110 : -70,
+              bottom: showAll ? -13 : 10,
+              zIndex: 1000,
               width: "100%",
+              cursor: "pointer",
             }}
             onClick={() => {
               setShowAll(!showAll);

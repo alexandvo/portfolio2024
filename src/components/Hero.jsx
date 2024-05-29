@@ -48,7 +48,8 @@ const Hero = () => {
           flexDirection: 'column',
           width: "100px",
           bottom: 0,
-          mb: 6,
+          mb: 13,
+          cursor: "pointer"
           
         }}
       >
