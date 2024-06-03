@@ -7,7 +7,7 @@ import Work from "../components/Work";
 const Home = () => {
   const open = false;
   return (
-    <Container>
+    <Container >
       <Hero />
       <Expertise />
       <Skills />

@@ -21,6 +21,7 @@ import { useEffect, useRef, useState } from "react";
 const Skills = () => {
   const theme = useTheme();
   const [menuSelect, setMenuSelect] = useState("All");
+  const [menuShow, setMenuShow] = useState(false);
   const [showAll, setShowAll] = useState(false);
   const { isSmallScreen, isMediumScreen, isLargeScreen } = theme.ss;
   const collapsable = isSmallScreen;
@@ -232,11 +233,25 @@ const Skills = () => {
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
+    if (!menuShow) {
+      setMenuShow(true);
+    }
   };
 
   const handleClose = () => {
+    setMenuShow(false);
     setAnchorEl(null);
   };
+
+  useEffect(() => {
+    // Add event listener for scroll
+    window.addEventListener("scroll", handleClose);
+
+    // Remove event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleClose);
+    };
+  }, []);
 
   return (
     <Box sx={{ mb: 8 }}>
@@ -250,6 +265,9 @@ const Skills = () => {
           bgcolor: "#2e2e2e",
           zIndex: 2000,
           mb: 2,
+          "&:hover": {
+            backgroundColor: "#4a4a4a", // Reset hover color for touch devices
+          },
           "@media (hover: none) and (pointer: coarse)": {
             "&:hover": {
               backgroundColor: "#2e2e2e", // Reset hover color for touch devices
@@ -282,9 +300,15 @@ const Skills = () => {
           },
           transform: "translateY(10px)",
           zIndex: 3000,
+          opacity: menuShow ? 1 : 0,
         }}
+        disableScrollLock={true}
+        disablePortal={true}
       >
-        <MenuItem onClick={handleMenuItemClick("All")}>
+        <MenuItem
+          onClick={handleMenuItemClick("All")}
+          sx={{ "&:hover": { backgroundColor: "#4a4a4a" } }}
+        >
           <Typography
             variant="h5"
             fontFamily={theme.typography.secondary}
@@ -293,7 +317,10 @@ const Skills = () => {
             All
           </Typography>
         </MenuItem>
-        <MenuItem onClick={handleMenuItemClick("Frontend")}>
+        <MenuItem
+          onClick={handleMenuItemClick("Frontend")}
+          sx={{ "&:hover": { backgroundColor: "#4a4a4a" } }}
+        >
           <Typography
             variant="h5"
             fontFamily={theme.typography.secondary}
@@ -302,7 +329,10 @@ const Skills = () => {
             Frontend
           </Typography>
         </MenuItem>
-        <MenuItem onClick={handleMenuItemClick("Backend")}>
+        <MenuItem
+          onClick={handleMenuItemClick("Backend")}
+          sx={{ "&:hover": { backgroundColor: "#4a4a4a" } }}
+        >
           <Typography
             variant="h5"
             fontFamily={theme.typography.secondary}
@@ -311,7 +341,10 @@ const Skills = () => {
             Backend
           </Typography>
         </MenuItem>
-        <MenuItem onClick={handleMenuItemClick("Databases")}>
+        <MenuItem
+          onClick={handleMenuItemClick("Databases")}
+          sx={{ "&:hover": { backgroundColor: "#4a4a4a" } }}
+        >
           <Typography
             variant="h5"
             fontFamily={theme.typography.secondary}
@@ -320,7 +353,10 @@ const Skills = () => {
             Databases
           </Typography>
         </MenuItem>
-        <MenuItem onClick={handleMenuItemClick("Tools")}>
+        <MenuItem
+          onClick={handleMenuItemClick("Tools")}
+          sx={{ "&:hover": { backgroundColor: "#4a4a4a" } }}
+        >
           <Typography
             variant="h5"
             fontFamily={theme.typography.secondary}
@@ -329,7 +365,10 @@ const Skills = () => {
             Tools
           </Typography>
         </MenuItem>
-        <MenuItem onClick={handleMenuItemClick("Languages")}>
+        <MenuItem
+          onClick={handleMenuItemClick("Languages")}
+          sx={{ "&:hover": { backgroundColor: "#4a4a4a" } }}
+        >
           <Typography
             variant="h5"
             fontFamily={theme.typography.secondary}
@@ -340,7 +379,7 @@ const Skills = () => {
         </MenuItem>
       </Menu>
 
-      <Box sx={{ position: "relative", pb: menuSelect != "All" ? 0 : 12}}>
+      <Box sx={{ position: "relative", pb: menuSelect != "All" ? 0 : 12 }}>
         {menuSelect == "All" ? (
           <Collapse
             in={showAll || !collapsable || menuSelect != "All"}
