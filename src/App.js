@@ -9,12 +9,14 @@ import { useEffect, useState } from "react";
 function App() {
   const baseTheme = createTheme();
 
-const isSmallScreen = useMediaQuery(baseTheme.breakpoints.down("md"));
-  const isMediumScreen = useMediaQuery(baseTheme.breakpoints.between("md", "lg"));
+  const isExSmallScreen = useMediaQuery(baseTheme.breakpoints.up("xs"))
+const isSmallScreen = useMediaQuery(baseTheme.breakpoints.up("sm"));
+  const isMediumScreen = useMediaQuery(baseTheme.breakpoints.up("md"));
   const isLargeScreen = useMediaQuery(baseTheme.breakpoints.up("lg"));
 
 const theme = createTheme({
   ss: {
+    isExSmallScreen,
     isSmallScreen,
     isMediumScreen,
     isLargeScreen

@@ -18,12 +18,12 @@ import ExpertiseCard from "./ExpertiseCard";
 const Expertise = () => {
   const theme = useTheme();
 
-  const { isSmallScreen, isMediumScreen, isLargeScreen } = theme.ss;
+  const {isExSmallScreen, isSmallScreen, isMediumScreen, isLargeScreen } = theme.ss;
 
-  const variant = isSmallScreen ? "h4" : isMediumScreen ? "h2" : "h2";
+  const variant = isLargeScreen ? "h2" : isMediumScreen ? "h2" : "h4";
 
   return (
-    <Box sx={{mb: 10 }}>
+    <Box sx={{mb: 20 }}>
       <Typography
         variant={variant}
         align="center"

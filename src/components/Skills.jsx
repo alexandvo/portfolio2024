@@ -23,9 +23,9 @@ const Skills = () => {
   const [menuSelect, setMenuSelect] = useState("All");
   const [menuShow, setMenuShow] = useState(false);
   const [showAll, setShowAll] = useState(false);
-  const { isSmallScreen, isMediumScreen, isLargeScreen } = theme.ss;
-  const collapsable = isSmallScreen;
-  const variant = isSmallScreen ? "h4" : isMediumScreen ? "h2" : "h2";
+  const {isExSmallScreen, isSmallScreen, isMediumScreen, isLargeScreen } = theme.ss;
+  const collapsable = !isLargeScreen && !isMediumScreen;
+  const variant = isLargeScreen || isMediumScreen ? "h2" : "h4";
   const skillsRef = useRef(null);
   const skills = [
     [
@@ -254,7 +254,7 @@ const Skills = () => {
   }, []);
 
   return (
-    <Box sx={{ mb: 8 }}>
+    <Box sx={{ mb: isMediumScreen ? 5 : 20 }}>
       <Typography variant={variant} sx={{ mb: 6 }}>
         Skills
       </Typography>

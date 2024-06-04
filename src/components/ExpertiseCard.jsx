@@ -12,7 +12,7 @@ import {
 const ExpertiseCard = ({ content, t, st, avatar = null }) => {
   const theme = useTheme();
 
-  const { isSmallScreen, isMediumScreen, isLargeScreen } = theme.ss;
+  const {isExSmallScreen, isSmallScreen, isMediumScreen, isLargeScreen } = theme.ss;
 
   return (
     <Card
@@ -30,11 +30,9 @@ const ExpertiseCard = ({ content, t, st, avatar = null }) => {
             <img
               src={avatar}
               style={{
-                height: isSmallScreen
-                  ? "11vw"
-                  : isMediumScreen
-                  ? "11vw"
-                  : isLargeScreen ? "50px" : undefined,
+                height: isLargeScreen
+                ? "50px" :
+                "11vw",
                 marginRight: "10px",
               }}
               alt="avatar"
