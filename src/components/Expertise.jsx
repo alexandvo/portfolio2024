@@ -1,12 +1,7 @@
 import {
-  Avatar,
   Box,
-  Card,
-  CardContent,
-  CardHeader,
-  Container,
+
   Typography,
-  useMediaQuery,
   useTheme,
 } from "@mui/material";
 import computerIcon from "../assets/images/computer.png";
@@ -18,7 +13,7 @@ import ExpertiseCard from "./ExpertiseCard";
 const Expertise = () => {
   const theme = useTheme();
 
-  const {isExSmallScreen, isSmallScreen, isMediumScreen, isLargeScreen } = theme.ss;
+  const {isMediumScreen, isLargeScreen } = theme.ss;
 
   const variant = isLargeScreen ? "h2" : isMediumScreen ? "h2" : "h4";
 

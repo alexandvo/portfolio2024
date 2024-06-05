@@ -1,6 +1,5 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import abstract from "../assets/images/abstract-shape.png";
-import downArrow from "../assets/images/down-arrow.png"
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const Hero = () => {

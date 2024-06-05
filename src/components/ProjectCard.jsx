@@ -7,7 +7,6 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import cpu from "../assets/images/sekiro.jpg";
 import { useState } from "react";
 
 const ProjectCard = ({ title, cover, h = ["auto", "auto", "auto", "auto"] }) => {

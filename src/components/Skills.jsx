@@ -1,15 +1,12 @@
 import {
   Box,
   Collapse,
-  Hidden,
-  Paper,
+
   Typography,
-  useMediaQuery,
+
   useTheme,
 } from "@mui/material";
-import pic from "../assets/images/computer.png";
 import SkillCard from "./SkillCard";
-import downArrow from "../assets/images/down-arrow.png";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
@@ -23,7 +20,7 @@ const Skills = () => {
   const [menuSelect, setMenuSelect] = useState("All");
   const [menuShow, setMenuShow] = useState(false);
   const [showAll, setShowAll] = useState(false);
-  const {isExSmallScreen, isSmallScreen, isMediumScreen, isLargeScreen } = theme.ss;
+  const {isMediumScreen, isLargeScreen } = theme.ss;
   const collapsable = !isLargeScreen && !isMediumScreen;
   const variant = isLargeScreen || isMediumScreen ? "h2" : "h4";
   const skillsRef = useRef(null);
@@ -287,7 +284,6 @@ const Skills = () => {
         >
           {menuSelect}
         </Typography>
-        {/* <img src={downArrow} alt="down arrow" /> */}
       </Button>
       <Menu
         id="simple-menu"
@@ -379,10 +375,10 @@ const Skills = () => {
         </MenuItem>
       </Menu>
 
-      <Box sx={{ position: "relative", pb: menuSelect != "All" ? 0 : 12 }}>
-        {menuSelect == "All" ? (
+      <Box sx={{ position: "relative", pb: menuSelect !== "All" ? 0 : 12 }}>
+        {menuSelect === "All" ? (
           <Collapse
-            in={showAll || !collapsable || menuSelect != "All"}
+            in={showAll || !collapsable || menuSelect !== "All"}
             collapsedSize={200}
           >
             <Box
@@ -426,11 +422,11 @@ const Skills = () => {
             height: "50px",
             background:
               "linear-gradient(to bottom, rgba(21,21,21,0), rgba(21,21,21,1))",
-            opacity: showAll || !collapsable || menuSelect != "All" ? 0 : 1,
+            opacity: showAll || !collapsable || menuSelect !== "All" ? 0 : 1,
             transition: "opacity 300ms",
           }}
         />
-        {collapsable && menuSelect == "All" && (
+        {collapsable && menuSelect === "All" && (
           <Box
             sx={{
               position: "absolute",
