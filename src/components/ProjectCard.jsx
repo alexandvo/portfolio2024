@@ -41,7 +41,7 @@ const ProjectCard = ({ title, cover, h = ["auto", "auto", "auto", "auto"] }) => 
             zIndex: 1,
             opacity: 0,
             transition: "opacity 0.3s ease-in-out",
-            opacity: hovering ? 0.5 : 0,
+            opacity: hovering && isLargeScreen ? 0.5 : 0,
           }}
         ></div>
         <CardContent
