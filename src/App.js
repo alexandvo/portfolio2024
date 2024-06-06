@@ -30,6 +30,7 @@ const theme = createTheme({
     },
     accent: {
       main: "#700C0C",
+      sup: "#2e0606"
     },
   },
   typography: {
