@@ -4,6 +4,7 @@ import Expertise from "../components/Expertise";
 import Skills from "../components/Skills";
 import Work from "../components/Work";
 import Experience from "../components/Experience";
+import Contact from "../components/Contact";
 
 const Home = () => {
   const open = false;
@@ -14,6 +15,7 @@ const Home = () => {
       <Skills />
       <Work />
       <Experience />
+      <Contact />
     </Container>
   );
 };
