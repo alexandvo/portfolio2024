@@ -4,9 +4,20 @@ import AccordianSummary from "@mui/material/AccordionSummary";
 import AccordianDetails from "@mui/material/AccordionDetails";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { Box, Grid, Typography, useTheme } from "@mui/material";
+import { Box, Grid, Link, Typography, useTheme } from "@mui/material";
 
-const JobAccordian = ({expanded, changePanel, lst, cover, title, desc, location, website, name, date}) => {
+const JobAccordian = ({
+  expanded,
+  changePanel,
+  lst,
+  cover,
+  title,
+  desc,
+  location,
+  website,
+  name,
+  date,
+}) => {
   const theme = useTheme();
   const mdWidth = theme.breakpoints.values.md;
   const { isSmallScreen, isMediumScreen, isLargeScreen } = theme.ss;
@@ -19,7 +30,7 @@ const JobAccordian = ({expanded, changePanel, lst, cover, title, desc, location,
       disableGutters
       sx={{
         bgcolor: "transparent",
-        width: '100%',
+        width: "100%",
         mb: 1,
       }}
     >
@@ -53,7 +64,11 @@ const JobAccordian = ({expanded, changePanel, lst, cover, title, desc, location,
           fontFamily={theme.typography.primary}
           color="white"
           fontWeight={600}
-          sx={{position: "absolute", right: 80, opacity: !isSmallScreen? 0 : 1}}
+          sx={{
+            position: "absolute",
+            right: 80,
+            opacity: !isSmallScreen ? 0 : 1,
+          }}
         >
           {date}
         </Typography>
@@ -108,7 +123,11 @@ const JobAccordian = ({expanded, changePanel, lst, cover, title, desc, location,
                     alignItems: "center",
                   }}
                 />
-                <Typography color="#aeaeae">{website}</Typography>
+                <Typography >
+                  <Link href={`http://www.${website}`} rel="noopener" target="_blank" sx={{textDecoration: 'none', color:"#aeaeae"}}>
+                    {website}
+                  </Link>
+                </Typography>
               </Box>
             </Box>
             <Typography
