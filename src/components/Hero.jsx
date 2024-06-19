@@ -2,7 +2,7 @@ import { Box, Typography, useTheme } from "@mui/material";
 import abstract from "../assets/images/abstract-shape.png";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-const Hero = () => {
+const Hero = ({scrollTo}) => {
   const theme = useTheme();
   return (
     <Box
@@ -51,6 +51,7 @@ const Hero = () => {
           cursor: "pointer"
           
         }}
+        onClick={() => scrollTo('expertise')}
       >
         <Typography color='primary' variant="body1" fontFamily={theme.typography.secondary}>Learn More</Typography>
         <ExpandMoreIcon color="primary" sx={{fontSize: '2rem'}} className="oscillate-animation"/>

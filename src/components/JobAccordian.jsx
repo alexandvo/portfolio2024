@@ -22,6 +22,7 @@ const JobAccordian = ({
   const mdWidth = theme.breakpoints.values.md;
   const { isSmallScreen, isMediumScreen, isLargeScreen } = theme.ss;
 
+
   return (
     <Accordion
       expanded={expanded}
@@ -44,7 +45,7 @@ const JobAccordian = ({
           borderRadius: 1,
         }}
         expandIcon={
-          expanded === name ? (
+          expanded ? (
             <RemoveIcon sx={{ color: "white" }} />
           ) : (
             <AddIcon sx={{ color: "white" }} />
