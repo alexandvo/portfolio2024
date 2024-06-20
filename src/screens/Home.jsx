@@ -1,29 +1,16 @@
-import {
-  Box,
-  Button,
-  Collapse,
-  Container,
-  Drawer,
-  IconButton,
-  Toolbar,
-  Typography,
-  useTheme,
-} from "@mui/material";
-import Hero from "../components/Hero";
+import { Box, Container, useTheme } from "@mui/material";
 import Expertise from "../components/Expertise";
 import Skills from "../components/Skills";
 import Work from "../components/Work";
 import Experience from "../components/Experience";
 import Contact from "../components/Contact";
-import AppBar from "@mui/material/AppBar";
-import { Element, Link, scroller } from "react-scroll";
+import { Element, scroller } from "react-scroll";
 import NavBar from "../components/NavBar";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
 import { useEffect, useState } from "react";
 import SectionDrawer from "../components/SectionDrawer";
 import MenuToggle from "../components/MenuToggle";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import Hero from "../components/Hero";
 
 const Home = () => {
   const [showUpScroll, setShowUpScroll] = useState(false);
@@ -32,7 +19,14 @@ const Home = () => {
       duration: 600,
       delay: 0,
       smooth: "easeInOutQuad",
-      offset: section === "contact" ? -300 : section === "home" ? 0 : isMediumScreen ? -100 : -30,
+      offset:
+        section === "contact"
+          ? -300
+          : section === "home"
+          ? 0
+          : isMediumScreen
+          ? -100
+          : -30,
     });
   };
   const [open, setOpen] = useState(false);
@@ -65,7 +59,6 @@ const Home = () => {
         </>
       )}
       <Box
-
         sx={{
           position: "fixed",
           zIndex: 5000,
@@ -77,9 +70,9 @@ const Home = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          opacity: showUpScroll && !isMediumScreen ? 1 : 0,
+          opacity: showUpScroll ? 1 : 0,
           transition: "opacity 0.3s ease-in-out",
-          boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.15)'
+          boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.15)",
         }}
         onClick={() => scrollTo("home")}
       >

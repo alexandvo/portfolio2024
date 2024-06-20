@@ -1,8 +1,10 @@
 import AppBar from "@mui/material/AppBar";
 import { Element, Link, scroller } from "react-scroll";
 import { Button, Toolbar, Typography, useTheme } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = ({ scrollTo }) => {
+  let navigate = useNavigate()
   const theme = useTheme();
   const sections = [
     "home",
