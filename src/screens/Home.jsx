@@ -61,11 +61,11 @@ const Home = () => {
   return (
     <Container>
       {isMediumScreen ? (
-        <NavBar scrollTo={scrollTo} />
+        <NavBar/>
       ) : (
         <>
           <MenuToggle setOpen={setOpen} />
-          <SectionDrawer scrollTo={scrollTo} setOpen={setOpen} open={open} />
+          <SectionDrawer setOpen={setOpen} open={open} />
         </>
       )}
       <Box
