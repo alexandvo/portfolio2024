@@ -1,10 +1,12 @@
 import AppBar from "@mui/material/AppBar";
 import { Element, Link, scroller } from "react-scroll";
 import { Button, Toolbar, Typography, useTheme } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
-const NavBar = ({ scrollTo }) => {
-  let navigate = useNavigate()
+const NavBar = () => {
+  const navigate = useNavigate()
+  const location = useLocation();
   const theme = useTheme();
   const sections = [
     "home",
@@ -14,6 +16,7 @@ const NavBar = ({ scrollTo }) => {
     "experience",
     "contact",
   ];
+
   return (
     <AppBar
       position="fixed"
@@ -27,7 +30,8 @@ const NavBar = ({ scrollTo }) => {
         {sections.map((section, _) => (
           <Button
           key={_}
-            onClick={() => scrollTo(section)}
+            // onClick={() => scrollTo(section)}
+            onClick={() => {navigate(`/#${section}`)}}
             sx={{ textTransform: "none" }}
           >
             <Typography

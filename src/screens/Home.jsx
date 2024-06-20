@@ -11,9 +11,12 @@ import SectionDrawer from "../components/SectionDrawer";
 import MenuToggle from "../components/MenuToggle";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import Hero from "../components/Hero";
+import { useLocation } from "react-router-dom";
 
 const Home = () => {
   const [showUpScroll, setShowUpScroll] = useState(false);
+  const location = useLocation();
+  
   const scrollTo = (section) => {
     scroller.scrollTo(section, {
       duration: 600,
@@ -29,6 +32,13 @@ const Home = () => {
           : -30,
     });
   };
+  useEffect(() => {
+    const hashValue = location.hash;
+    if (hashValue !== '') {
+      const sectionId = hashValue.substring(1);
+      scrollTo(sectionId);
+    }
+  }, [location.hash]);
   const [open, setOpen] = useState(false);
   const theme = useTheme();
   const { isExSmallScreen, isSmallScreen, isMediumScreen, isLargeScreen } =

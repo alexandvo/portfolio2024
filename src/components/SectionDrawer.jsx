@@ -21,8 +21,10 @@ import NavBar from "../components/NavBar";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SectionDrawer = ({ scrollTo, setOpen, open }) => {
+  const navigate = useNavigate()
   const sections = [
     "home",
     "expertise",
@@ -56,7 +58,7 @@ const SectionDrawer = ({ scrollTo, setOpen, open }) => {
               justifyContent: "flex-start",
             }}
             onClick={() => {
-              scrollTo(section);
+              navigate(`/#${section}`)
               setOpen(false);
             }}
           >

@@ -6,6 +6,9 @@ import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ProjectPage from "./screens/ProjectPage";
 import NavBar from "./components/NavBar";
+import MenuToggle from "./components/MenuToggle";
+import SectionDrawer from "./components/SectionDrawer";
+import TopLevelNavBar from "./components/TopLevelNavBar";
 
 function App() {
   const baseTheme = createTheme();
@@ -51,10 +54,11 @@ function App() {
       secondary: ["Open Sans"].join(","),
     },
   });
+  
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        <NavBar />
+        <TopLevelNavBar />
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/projects/:projectId" element={<ProjectPage />} />
