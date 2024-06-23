@@ -38,6 +38,10 @@ function App() {
       },
     },
     typography: {
+      allVariants: {
+        color: "#ffffff",
+      },
+
       h2: {
         fontSize: "5rem",
         fontFamily: "Montserrat",
@@ -54,7 +58,7 @@ function App() {
       secondary: ["Open Sans"].join(","),
     },
   });
-  
+
   return (
     <ThemeProvider theme={theme}>
       <Router>

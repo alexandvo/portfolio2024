@@ -22,13 +22,13 @@ const Work = () => {
       </Typography>
       <Grid container spacing={4}>
         <Grid item xs={12} sm={6} lg={4}>
-          <ProjectCard title="Sp/it - Roommate App" cover={splitCover} h={["45vw", "25vw", "25vw", 200]}/>
+          <ProjectCard title="Sp/it - Roommate App" cover={splitCover} id={'split'} h={["45vw", "25vw", "25vw", 200]}/>
         </Grid>
         <Grid item xs={12} sm={6} lg={4}>
-          <ProjectCard title="Tabventure (Hackathon)" cover={tabventureCover} h={["45vw", "25vw", "25vw", 200]}/>
+          <ProjectCard title="Tabventure (Hackathon)" cover={tabventureCover} id={'tabventure'} h={["45vw", "25vw", "25vw", 200]}/>
         </Grid>
         <Grid item xs={12} lg={4}>
-          <ProjectCard title="Capsy - Virtual Time Capsule" cover={capsyCover} h={["45vw", "50vw", "50vw", 200]}/>
+          <ProjectCard title="Capsy - Virtual Time Capsule" cover={capsyCover} id={'capsy'} h={["45vw", "50vw", "50vw", 200]}/>
         </Grid>
       </Grid>
     </Box>

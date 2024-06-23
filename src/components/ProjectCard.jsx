@@ -8,13 +8,15 @@ import {
   useTheme,
 } from "@mui/material";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const ProjectCard = ({ title, cover, h = ["auto", "auto", "auto", "auto"] }) => {
+const ProjectCard = ({ title, cover, id, h = ["auto", "auto", "auto", "auto"] }) => {
   const [hovering, setHovering] = useState(false);
   const theme = useTheme();
   const {isExSmallScreen, isSmallScreen, isMediumScreen, isLargeScreen } = theme.ss;
+  const navigate = useNavigate()
   return (
-    <Card elevation={2} sx={{ bgcolor: "transparent" }}>
+    <Card elevation={2} sx={{ bgcolor: "transparent" }} onClick={() => {navigate(`/projects/${id}`)}}>
       <CardActionArea
         onMouseEnter={() => {
           setHovering(true);
