@@ -1,7 +1,7 @@
 import "./tailwind.css";
 import Home from "./screens/Home";
 import "./styles/global.css";
-import { ThemeProvider, createTheme, useMediaQuery } from "@mui/material";
+import { Box, ThemeProvider, createTheme, useMediaQuery } from "@mui/material";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ProjectPage from "./screens/ProjectPage";
@@ -9,6 +9,9 @@ import NavBar from "./components/NavBar";
 import MenuToggle from "./components/MenuToggle";
 import SectionDrawer from "./components/SectionDrawer";
 import TopLevelNavBar from "./components/TopLevelNavBar";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import ScrollToTop from "./components/ScrollToTop";
+
 
 function App() {
   const baseTheme = createTheme();
@@ -17,6 +20,7 @@ function App() {
   const isSmallScreen = useMediaQuery(baseTheme.breakpoints.up("sm"));
   const isMediumScreen = useMediaQuery(baseTheme.breakpoints.up("md"));
   const isLargeScreen = useMediaQuery(baseTheme.breakpoints.up("lg"));
+  const isExLargeScreen = useMediaQuery(baseTheme.breakpoints.up('xl'));
 
   const theme = createTheme({
     ss: {
@@ -24,6 +28,7 @@ function App() {
       isSmallScreen,
       isMediumScreen,
       isLargeScreen,
+      isExLargeScreen
     },
     palette: {
       primary: {
@@ -59,6 +64,8 @@ function App() {
     },
   });
 
+  
+
   return (
     <ThemeProvider theme={theme}>
       <Router>
@@ -68,6 +75,7 @@ function App() {
           <Route path="/projects/:projectId" element={<ProjectPage />} />
         </Routes>
       </Router>
+      <ScrollToTop />
     </ThemeProvider>
   );
 }
