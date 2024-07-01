@@ -24,7 +24,11 @@ const ProjectPage = () => {
       desc: "Sp/lit is a quality-of-life mobile application that combines multiple cooperative \
       features into one place to help roommates have a better time staying with each other. \
       Useful features offered to users are messenging, shared calendars, finance trackers, location sharing, and multi-task management.",
-      media: ["/images/split-product-page.png"],
+      media: [
+        "/images/split-product-page.png",
+        "/images/split-dashboards.png",
+        "/images/split-messages.png",
+      ],
       link: "",
       tech: "React Native, Firebase, PostgreSQL, Express, JavaScript, NodeJS",
       nextProjectId: "tabventure",
@@ -38,7 +42,7 @@ const ProjectPage = () => {
       This is incredibly useful for someone who tends to open many tabs to look at multiple outlets of information regarding their trip. \
       When activated, the extension displays a window housing a virtualized AI assistant specifically designed to answer questions based \
       on the open browser tabs. This allows for online trip planning to become streamlined and alleviates the hassle of dealing with multiple open tabs yourself.",
-      media: ["/images/tabventure-product-page.png"],
+      media: ["/images/tabventure-product-page.png", "/videos/tabventure-demo.mp4"],
       link: "",
       tech: "React, Firebase, Python, ChromaDB, OpenAI, LangChain, JavaScript, NodeJS",
       nextProjectId: "capsy",
@@ -51,7 +55,13 @@ const ProjectPage = () => {
       desc: "Capsy is a website application for creating and storing priceless digital memories for future retrieval. \
       Users can upload photos, set dates to be opened, and make personal notes. It allows individuals to evoke a sense of nostalgia \
       by looking into the past and relive cherished moments",
-      media: ["/images/capsy-product-page.png"],
+      media: [
+        "/images/capsy-product-page.png",
+        "/images/capsy-dash.png",
+        "/images/capsy-create-content.png",
+        "/images/capsy-capinfo.png",
+        "/images/capsy-opened.png",
+      ],
       link: "https://capsy.vercel.app",
       tech: "React, Firebase, JavaScript, Express, NodeJS, PostgreSQL",
       nextProjectId: "split",
@@ -82,8 +92,7 @@ const ProjectPage = () => {
 
   return (
     <>
-      {" "}
-      <Container>
+      <Container sx={{pb: isMediumScreen ? 10 : 0}}>
         <Box sx={{ mt: 25, mb: 5, p: 0.1 }}>
           <Typography
             variant="h2"
@@ -137,7 +146,12 @@ const ProjectPage = () => {
                     window.open(link, "_blank");
                   }
                 }}
-                sx={{ textTransform: "none", mt: 5, p: isMediumScreen ? 1 : 0 , display: link !== "" ? '' : 'none'}}
+                sx={{
+                  textTransform: "none",
+                  mt: 5,
+                  p: isMediumScreen ? 1 : 0,
+                  display: link !== "" ? "" : "none",
+                }}
               >
                 <Typography variant="h2" sx={{ fontSize: "1rem" }}>
                   Open Project
@@ -147,13 +161,25 @@ const ProjectPage = () => {
             </Box>
           </Grid>
         </Grid>
-        {media.map((item, _) => (
-          <img
-            key={_}
-            src={item}
-            style={{ width: "100%", marginBottom: "20px" }}
-          />
-        ))}
+        {media.map((item, _) =>
+          item.split("/")[1] === "images" ? (
+            <img
+              key={_}
+              src={item}
+              style={{ width: "100%", marginBottom: "20px" }}
+            />
+          ) : (
+            <video
+              key={_}
+              src={item}
+              loop
+              muted
+              autoPlay
+              controls
+              style={{ width: "100%", marginBottom: "20px" }}
+            />
+          )
+        )}
       </Container>
       <Button
         onClick={() => {
@@ -204,6 +230,7 @@ const ProjectPage = () => {
           alignItems: "center",
           gap: "1vw",
           display: isExLargeScreen ? "none" : "flex",
+          mb: 5
         }}
       >
         <Button
