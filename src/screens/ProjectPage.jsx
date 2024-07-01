@@ -21,9 +21,7 @@ const ProjectPage = () => {
       type: "App Development",
       title: "Sp/it",
       subtitle: "Roommate App",
-      desc: "Sp/lit is a quality-of-life mobile application that combines multiple cooperative \
-      features into one place to help roommates have a better time staying with each other. \
-      Useful features offered to users are messenging, shared calendars, finance trackers, location sharing, and multi-task management.",
+      desc: "Sp/lit is a quality-of-life mobile application that combines multiple cooperative features into one place to help roommates have a better time staying with each other. Useful features offered to users are messenging, shared calendars, finance trackers, location sharing, and multi-task management.",
       media: [
         "/images/split-product-page.png",
         "/images/split-dashboards.png",
@@ -38,10 +36,7 @@ const ProjectPage = () => {
       type: "Web Development",
       title: "Tabventure",
       subtitle: "AI-Powered Trip Planner",
-      desc: "Tabventure is a browser extension application that has the ability to summarize the content of the currently open tabs. \
-      This is incredibly useful for someone who tends to open many tabs to look at multiple outlets of information regarding their trip. \
-      When activated, the extension displays a window housing a virtualized AI assistant specifically designed to answer questions based \
-      on the open browser tabs. This allows for online trip planning to become streamlined and alleviates the hassle of dealing with multiple open tabs yourself.",
+      desc: "Tabventure is a browser extension application that has the ability to summarize the content of the currently open tabs. This is incredibly useful for someone who tends to open many tabs to look at multiple outlets of information regarding their trip. When activated, the extension displays a window housing a virtualized AI assistant specifically designed to answer questions based on the open browser tabs. This allows for online trip planning to become streamlined and alleviates the hassle of dealing with multiple open tabs yourself.",
       media: ["/images/tabventure-product-page.png", "/videos/tabventure-demo.mp4"],
       link: "",
       tech: "React, Firebase, Python, ChromaDB, OpenAI, LangChain, JavaScript, NodeJS",
@@ -52,9 +47,7 @@ const ProjectPage = () => {
       type: "Web Development",
       title: "Capsy",
       subtitle: "Virtual Time Capsule",
-      desc: "Capsy is a website application for creating and storing priceless digital memories for future retrieval. \
-      Users can upload photos, set dates to be opened, and make personal notes. It allows individuals to evoke a sense of nostalgia \
-      by looking into the past and relive cherished moments",
+      desc: "Capsy is a website application for creating and storing priceless digital memories for future retrieval. Users can upload photos, set dates to be opened, and make personal notes. It allows individuals to evoke a sense of nostalgia by looking into the past and relive cherished moments",
       media: [
         "/images/capsy-product-page.png",
         "/images/capsy-dash.png",
@@ -82,7 +75,7 @@ const ProjectPage = () => {
     prevProjectId,
   } = project;
 
-  const { isMediumScreen, isLargeScreen, isExLargeScreen } = theme.ss;
+  const { isMediumScreen, isExLargeScreen } = theme.ss;
 
   useEffect(() => {
     window.scrollTo({
@@ -166,6 +159,7 @@ const ProjectPage = () => {
             <img
               key={_}
               src={item}
+              alt={item}
               style={{ width: "100%", marginBottom: "20px" }}
             />
           ) : (

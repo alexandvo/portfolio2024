@@ -11,6 +11,7 @@ import SectionDrawer from "./components/SectionDrawer";
 import TopLevelNavBar from "./components/TopLevelNavBar";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ScrollToTop from "./components/ScrollToTop";
+import Page404 from "./screens/Page404";
 
 
 function App() {
@@ -73,6 +74,7 @@ function App() {
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/projects/:projectId" element={<ProjectPage />} />
+          <Route path='*' element={<Page404 />} />
         </Routes>
       </Router>
       <ScrollToTop />
