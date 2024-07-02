@@ -168,7 +168,6 @@ const ProjectPage = () => {
               src={item}
               loop
               muted
-              autoPlay
               controls
               style={{ width: "100%", marginBottom: "20px" }}
             />
