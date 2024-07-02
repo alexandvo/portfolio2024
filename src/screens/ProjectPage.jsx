@@ -75,7 +75,7 @@ const ProjectPage = () => {
     prevProjectId,
   } = project;
 
-  const { isMediumScreen, isExLargeScreen } = theme.ss;
+  const {isMediumScreen, isExLargeScreen } = theme.ss;
 
   useEffect(() => {
     window.scrollTo({
@@ -86,7 +86,7 @@ const ProjectPage = () => {
   return (
     <>
       <Container sx={{pb: isMediumScreen ? 10 : 0}}>
-        <Box sx={{ mt: 25, mb: 5, p: 0.1 }}>
+        <Box sx={{ mt: isMediumScreen ? 25 : 15, mb: 5, p: 0.1 }}>
           <Typography
             variant="h2"
             sx={{ color: "gray", fontSize: "1rem", mb: 1 }}
