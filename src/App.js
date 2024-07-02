@@ -76,8 +76,9 @@ function App() {
           <Route path="/projects/:projectId" element={<ProjectPage />} />
           <Route path='*' element={<Page404 />} />
         </Routes>
+        <ScrollToTop />
       </Router>
-      <ScrollToTop />
+      
     </ThemeProvider>
   );
 }

@@ -1,12 +1,16 @@
 import { Box, useTheme, } from "@mui/material";
 import { useEffect, useState } from "react";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const ScrollToTop = () => {
   const [showUpScroll, setShowUpScroll] = useState(false);
   const theme = useTheme();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
+    
     const handleScroll = () => {
       if (window.scrollY > 400) {
         setShowUpScroll(true);
@@ -36,6 +40,9 @@ const ScrollToTop = () => {
         boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.15)",
       }}
       onClick={() => {
+        if (location.pathname === "/") {
+          navigate('/#home')
+        }
         window.scrollTo({
           top: 0,
           behavior: "smooth",
