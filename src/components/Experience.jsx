@@ -21,7 +21,14 @@ const Experience = () => {
   };
 
   return (
-    <Box sx={{ mb: 20, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <Box
+      sx={{
+        mb: 20,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
       <Box
         sx={{ mb: 6, display: "flex", justifyContent: "center", width: "100%" }}
       >
@@ -29,7 +36,6 @@ const Experience = () => {
           Professional Experience
         </Typography>
       </Box>
-
 
       <Box
         sx={{
@@ -42,10 +48,12 @@ const Experience = () => {
         <JobAccordian
           expanded={expanded === "panel1"}
           changePanel={handleChange}
-          lst={["JavaScript", "React", "Python", "DynamoDB", "AWS"]}
+          lst={["JavaScript", "React", "Python", "AWS"]}
           cover={keybyte}
           title="Software Engineer Intern @ KeyByte LLC"
-          desc="Integrated DynamoDB support into a full-stack cloud optimization service for NoSQL databases."
+          desc="Benchmarked and integrated NoSQL distributed databases into the cloud optimizing service resulting in an
+increase in client database performance by over 30%. Developed automated scripts to reduce the generation time of training data for genetic machine learning
+models by over 50%."
           location="West Lafayette, Illinois"
           website="keybyte.xyz"
           date={2024}
