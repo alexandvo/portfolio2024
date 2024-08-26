@@ -51,7 +51,7 @@ const Experience = () => {
           date={2024}
           name="panel1"
         />
-        <JobAccordian
+        {/* <JobAccordian
           expanded={expanded === "panel2"}
           changePanel={handleChange}
           lst={["JavaScript", "SQL", "React", "NodeJS", "Python"]}
@@ -62,7 +62,7 @@ const Experience = () => {
           website="tpistaffing.com"
           date={2023}
           name="panel2"
-        />
+        /> */}
       </Box>
     </Box>
   );

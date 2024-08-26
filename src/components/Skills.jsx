@@ -40,6 +40,26 @@ const Skills = () => {
       "https://www.python.org",
     ],
     [
+      "Docker",
+      "#1D63ED",
+      'white',
+      new Set(["Tools","All"]),
+      "https://www.docker.com"
+    ],
+    [
+      "Flask",
+      "black",
+      'white',
+      new Set(["Backend","All"]),
+      "https://flask.palletsprojects.com/en/3.0.x/"
+    ],
+    [
+      "Couchbase",
+      "#E32A36",
+      'white',
+      new Set(['Databases','All'])
+    ],
+    [
       "C",
       "#A8B9CC",
       "white",
