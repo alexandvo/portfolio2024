@@ -1,0 +1,131 @@
+{
+  "personalInformation": {
+    "name": "Alexander Vo",
+    "title": "Software Engineer",
+    "school": "Texas A&M University",
+    "description": "Passionate and driven software engineer with a strong foundation in full-stack development. Thrives on building innovative and efficient solutions that solve real-world problems."
+  },
+  "contactInformation": {
+    "email": "alexthevo04@gmail.com",
+    "github": "https://github.com/alexandvo",
+    "linkedin": "https://linkedin.com/in/alexandvo"
+  },
+  "skills": {
+    "languages": [
+      "Python",
+      "C",
+      "C++",
+      "Java",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Assembly"
+    ],
+    "frontend": ["React", "React Native", "JavaFX"],
+    "backend": ["Node.js", "Express", "Flask"],
+    "databases": [
+      "Firebase",
+      "Couchbase",
+      "PostgreSQL",
+      "Supabase",
+      "DynamoDB",
+      "Aerospike"
+    ],
+    "tools": [
+      "Docker",
+      "Git",
+      "GitHub",
+      "Yarn",
+      "NPM",
+      "Figma",
+      "OpenAI",
+      "Jira",
+      "Linux",
+      "Ubuntu"
+    ],
+    "cloudServices": ["AWS", "Azure", "GCP"]
+  },
+  "experience": [
+    {
+      "company": "Microsoft",
+      "role": "Software Engineer Intern",
+      "skills": ["Azure", "OpenAI", "React", "JavaScript", "Python"],
+      "description": "Built two Azure GPT-4 log-analysis platforms, cutting analysis to ~30s; designed a React + Static Web Apps stack with fine-tuning (-36% token cost, higher accuracy), plus secure uploads and Python plugin selection for autonomous analysis.",
+      "location": "Redmond, Washington",
+      "date": 2025
+    },
+    {
+      "company": "KeyByte LLC",
+      "role": "Software Engineer Intern",
+      "skills": ["AWS", "React", "Python", "JavaScript"],
+      "description": "Benchmarked and integrated NoSQL distributed databases into the cloud optimizing service resulting in an increase in client database performance by over 30%. Developed automated scripts to reduce the generation time of training data for genetic machine learning models by over 50%.",
+      "location": "West Lafayette, Indiana",
+      "date": 2024
+    }
+  ],
+  "work": [
+    {
+      "title": "Worduno",
+      "type": "Web Development",
+      "subtitle": "AI-Powered Text Simplifier",
+      "media": ["worduno-product-page.png", "worduno-demo.mp4"],
+      "technologies": ["React", "Flask", "Python", "OpenAI", "JavaScript"],
+      "link": "https://chromewebstore.google.com/detail/worduno-text-simplifier/clkioiobgdmiefidhflfgocnflmdaefd"
+    },
+    {
+      "title": "Sp/it",
+      "type": "App Development",
+      "subtitle": "Roommate App",
+      "media": [
+        "split-product-page.png",
+        "split-dashboards.png",
+        "split-messages.png"
+      ],
+      "technologies": [
+        "React Native",
+        "Firebase",
+        "PostgreSQL",
+        "Express",
+        "JavaScript",
+        "NodeJS"
+      ]
+    },
+    {
+      "title": "Capsy",
+      "type": "Web Development",
+      "subtitle": "Virtual Time Capsule",
+      "media": [
+        "capsy-product-page.png",
+        "capsy-dash.png",
+        "capsy-create-content.png",
+        "capsy-capinfo.png",
+        "capsy-opened.png"
+      ],
+      "technologies": [
+        "React",
+        "Firebase",
+        "JavaScript",
+        "Express",
+        "NodeJS",
+        "PostgreSQL"
+      ],
+      "link": "https://capsy.vercel.app"
+    },
+    {
+      "title": "Tabventure",
+      "type": "Web Development",
+      "subtitle": "AI-Powered Trip Planner",
+      "media": ["tabventure-product-page.png", "tabventure-demo.mp4"],
+      "technologies": [
+        "React",
+        "Firebase",
+        "Python",
+        "ChromaDB",
+        "OpenAI",
+        "LangChain",
+        "JavaScript",
+        "NodeJS"
+      ]
+    }
+  ]
+}
